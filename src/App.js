@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import logo from './assets/Movie.jpg';
 import './App.css';
-import Sidebar from './Components/Sidebar/Sidebar';
 import Moviecards from './Container/Moviecards/Moviecards';
 import classes from './App.css';
+import Item from './Components/Item/Item';
 
 class App extends Component {
   state = {
+    all: ['English','Hindi', 'Bengali', 'Tamil', 'Telugu'],
     language: 'Hindi',
   }
 
-  changehandler = (props) => {
-    console.log('props:',props);
+  changehandler = (index) => {
+    const allLanguage = this.state.all;
+    this.setState({
+      language: allLanguage[index]
+    })
   }
   render() {
     return (
@@ -20,7 +24,11 @@ class App extends Component {
           <img src={logo} alt="Movielogo" className={classes.logo}/>
         </header>
         <main className={classes.main}>
-          <Sidebar onClicked={(event) => this.changehandler()}/>
+          <div className={classes.sidebar}>
+            {this.state.all.map((lang, index) => {
+              return <Item key={lang} clicked={() => this.changehandler(index)} title={lang} />
+            })}
+          </div>  
           <Moviecards language={this.state.language}/>
         </main>
           

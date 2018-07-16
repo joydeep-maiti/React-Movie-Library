@@ -1,17 +1,25 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .logo {
-  width: 170px;
-  height: auto;
-  margin: 15px;
+    width: 170px;
+    height: auto;
+    margin: 15px;
 }
+
 .main {
-  display: grid;
-  grid-template-columns: 250px auto;
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+.sidebar {
+    color: rgba(248, 250, 249, 0.959);
+    width: 240px;
+    margin-top: 15px;
 }
