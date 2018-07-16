@@ -2,15 +2,15 @@ import React from 'react';
 import classes from './Sidebar.css'; 
 import Item from './Item/Item';
 
-const sidebar = () => {
+const sidebar = (props) => {
     return (
         <div className={classes.sidebar}>
-            <Item title="English"/>
-            <Item title="Hindi" />
-            <Item title="Tamil" />
-            <Item title="Telugu" />
-            <Item title="Malayalam" />
-        </div>
+            <Item title="English" clicked={(event) => props.onClicked('English')}/>
+            <Item title="Hindi"  clicked={props.onClicked}/>
+            <Item title="Tamil"  clicked={props.onClicked}/>
+            <Item title="Telugu" clicked={props.onClicked} />
+            <Item title="Malayalam"  clicked={props.onClicked}/>
+        </div> 
     );
 }
 
