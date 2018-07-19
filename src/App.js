@@ -4,18 +4,13 @@ import './App.css';
 import Moviecards from './Container/Moviecards/Moviecards';
 import classes from './App.css';
 import Item from './Components/Item/Item';
+import { connect } from 'react-redux';
 
 class App extends Component {
-  state = {
-    all: ['English','Hindi', 'Bengali', 'Tamil', 'Telugu'],
-    language: 'Hindi',
-    active: 'Hindi'
-  }
 
   changehandler = (index) => {
     const allLanguage = this.state.all;
     this.setState({
-      language: allLanguage[index],
       active: allLanguage[index]
     })
   }
@@ -27,16 +22,29 @@ class App extends Component {
         </header>
         <main className={classes.main}>
           <div className={classes.sidebar}>
-            {this.state.all.map((lang, index) => {
-              return <Item  key={lang} clicked={() => this.changehandler(index)} title={lang} active={this.state.active}/>
+            {this.props.all.map((lang, index) => {
+              return <Item  key={lang} clicked={()=>this.props.changehandler(lang)} title={lang} active={this.props.active}/>
             })}
           </div>  
-          <Moviecards language={this.state.language}/>
-        </main>
-          
+          <Moviecards language={this.props.active}/>
+        </main>    
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  console.log('state',state);
+  return {
+    all: state.all,
+    active: state.active
+  }  
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changehandler: (lang) => dispatch({type:'CHANGEACTIVE', language:lang})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
