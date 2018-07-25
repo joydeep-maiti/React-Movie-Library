@@ -5,21 +5,33 @@
 
 .App {
     text-align: center;
+    background-image: linear-gradient(to right, white, rgb(218, 214, 214));
+    height: 100vh;
+}
+
+.myheader {
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-template-rows: 80px;
+    text-align: center;
+    color: brown;
+    background-image: linear-gradient(to left, yellow, purple);
+    margin-bottom: 50px;
 }
 
 .logo {
-    width: 170px;
+    width: 150px;
     height: auto;
     margin: 15px;
+    margin-left: 20%;
+    border-radius: 20px;
 }
 
-.main {
-    display: grid;
-    grid-template-columns: 250px auto;
-}
-
-.sidebar {
-    color: rgba(248, 250, 249, 0.959);
-    width: 240px;
-    margin-top: 15px;
+.link {
+    background-color: rgb(60, 175, 25);
+    padding: 20px 30px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    color: white;
 }
