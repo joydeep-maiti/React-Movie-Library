@@ -7,26 +7,26 @@ const moviecard = (props) => {
     const lang = props.language;
     switch (lang) {
         case 'English':
-            card = <div className={classes.English}></div>
+            card = <div className={classes.English} onClick={props.clicked}></div>
             break;
         
         case 'Hindi':
-            card = <div className={classes.Hindi}></div>
+            card = <img src={props.url} className={classes.Hindi} onClick={props.clicked}/>
             break;
 
         case 'Bengali':
-            card = <div className={classes.Bengali}></div>
+            card = <div className={classes.Bengali} onClick={props.clicked}></div>
             break;
 
         case 'Tamil':
-            card = <div className={classes.Tamil}></div>
+            card = <div className={classes.Tamil} onClick={props.clicked}></div>
             break;
 
         case 'Telugu':
-            card = <div className={classes.Telugu}></div>
+            card = <div className={classes.Telugu} onClick={props.clicked}></div>
             break;
         default:
-            card = <div className={classes.Hindi}></div>
+            card = <div className={classes.Hindi} onClick={props.clicked}></div>
             break;
     }
 

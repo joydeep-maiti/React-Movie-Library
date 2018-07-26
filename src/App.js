@@ -22,7 +22,6 @@ class App extends Component {
             <Route exact path="/mycollection" render={() => <div>Collection</div>} />
           </main>    
         </div>
-        
       </BrowserRouter>
     );
   }

@@ -5,6 +5,7 @@
     font-size: 20px;
     font-weight: 400;
     background-color: rgba(55, 29, 168, 0.959);
+    /* background-image: linear-gradient(to right, rgb(228, 175, 3), rgba(55, 29, 168, 0.959)); */
     text-align: center;
     border-radius: 2.3px;
     cursor: pointer;
@@ -22,6 +23,7 @@
     font-size: 20px;
     font-weight: 400;
     background-color: rgba(231, 194, 29, 0.959);
+    /* background-image: linear-gradient(to right, yellow, blue); */
     color: rgba(55, 29, 168, 0.959);
     text-align: center;
     border-radius: 2.3px;

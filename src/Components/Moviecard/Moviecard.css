@@ -4,9 +4,12 @@
 }
 
 .Hindi {
+    width: 300px;
+}
+/* .Hindi {
     background-image: url("../../assets/sanju.jpg");
     background-size: cover;
-}
+} */
 
 .Bengali {
     background-image: url("../../assets/haami.jpg");
