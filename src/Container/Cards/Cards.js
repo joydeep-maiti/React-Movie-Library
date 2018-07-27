@@ -62,6 +62,15 @@ class Cards extends Component {
         }
         
     }
+    addToCollection = () => {
+        console.log('in here');
+        axios.post('/collection.json',this.props.modalData)
+            .then(res => {
+                console.log('post',res);
+                this.props.closeBackdrop();
+            })
+            .catch(err => console.log('err', err));
+    }
     render() {  
         if(this.props.active === 'Hindi') {
             console.log('hindi');
@@ -78,13 +87,18 @@ class Cards extends Component {
                     })}
                 </div>
                 <Modal show={this.props.modal} closeBackdrop={this.props.closeBackdrop}>
-                    <div>
+                    <div className={classes.modal}>
+                        <img src={this.props.modalData.url} alt="img" className={classes.img} />
                         <p>Movie Name: {this.props.modalData.name}</p>
                         <p>Language: {this.props.modalData.language}</p>
                         <p>IMDB Rating: {this.props.modalData.imdb}</p>
+                        <p className={classes.btn} onClick={this.addToCollection}> ADD TO COLLECTION</p>
                     </div>
                 </Modal>
-                <Moviecards arr={this.props.movieslist} language={this.props.active} clicked={(key) => this.props.showModal(key)} />
+                <Moviecards 
+                    arr={this.props.movieslist} 
+                    language={this.props.active} 
+                    clicked={(key) => this.props.showModal(key)} />
             </div>
         );
     }

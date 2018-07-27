@@ -8,6 +8,7 @@ const initialState= {
         name: null,
         language: null,
         imdb: null,
+        url: null
     },
     movieslist: []
 }
