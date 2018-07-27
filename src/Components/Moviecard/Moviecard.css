@@ -1,27 +1,9 @@
-.English {
-    background-image: url("../../assets/interstellar-poster.jpg");
-    background-size: cover;
-}
-
-.Hindi {
+.card {
     width: 300px;
 }
-/* .Hindi {
-    background-image: url("../../assets/sanju.jpg");
-    background-size: cover;
-} */
 
-.Bengali {
-    background-image: url("../../assets/haami.jpg");
-    background-size: cover;
-}
-
-.Tamil {
-    background-image: url("../../assets/tamil.jpg");
-    background-size: cover;
-}
-
-.Telugu {
-    background-image: url("../../assets/telugu.jpg");
-    background-size: cover;
+@media (max-width: 400px) {
+    .card {
+        width: 150px;
+    }
 }

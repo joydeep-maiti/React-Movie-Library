@@ -11,7 +11,7 @@
 
 .myheader {
     display: grid;
-    grid-template-columns: 6fr 3fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 80px;
     text-align: center;
     color: brown;
@@ -34,4 +34,38 @@
     border-radius: 20px;
     margin: 10px;
     color: white;
+}
+
+@media (max-width: 800px) {
+    .myheader {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 60px;
+    }
+    .link {
+        font-size: 20px;
+        padding: 10px 10px;
+        margin: 5px;
+        border-radius: 10px
+    }
+    .logo {
+        width: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .myheader {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 50px;
+    }
+    .link {
+        font-size: 15px;
+        padding: 8px 8px;
+        margin: 5px;
+        border-radius: 10px
+    }
+    .logo {
+        width: 100px;
+    }
 }

@@ -29,3 +29,19 @@
     border-radius: 2.3px;
     cursor: pointer;
 }
+
+@media (max-width: 400px) {
+    .items {
+
+        margin: 3px;
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: 50;
+    }
+    .itemactive {
+        margin: 5px; 
+        padding: 5px 10px;
+        font-size: 20px;
+        font-weight: 50;
+    }
+}

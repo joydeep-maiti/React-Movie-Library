@@ -7,4 +7,13 @@
     /* grid-template-rows: repeat(auto-fill, 200px); */
     grid-row-gap: 20px;
     grid-column-gap: 10px;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+@media (max-width: 400px) {
+    .moviecards {
+        padding: 25px;
+        grid-row-gap: 5px;
+    }
 }
