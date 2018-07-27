@@ -1,24 +1,32 @@
 const initialState= {
     all: ['English','Hindi', 'Bengali', 'Tamil', 'Telugu'],
-    active: 'Hindi',
+    active: {
+        current: 'Hindi',
+        last: null},
     modal: false,
     modalData: {
         name: null,
         language: null,
         imdb: null,
-    }
+    },
+    movieslist: []
 }
 
 const reducer = (state = initialState, action) => {
     if( action.type === 'CHANGEACTIVE') {
-        console.log('index', action.ind);
-        return {
-            ...state,
-            active: action.language
+        console.log('index', state);
+        if(action.language !== state.active.current) {
+            return {
+                ...state,
+                active: {
+                    last: state.active.current,
+                    current: action.language
+                }
+            }
         }
+        
     }
     if (action.type === 'MODALDATA') {
-        console.log('index', action.data);
         return {
             ...state,
             modal: true,
@@ -26,10 +34,15 @@ const reducer = (state = initialState, action) => {
         }
     }
     if (action.type === 'CLOSEMODAL') {
-        console.log('Close modal');
         return {
             ...state,
             modal: false,
+        }
+    }
+    if (action.type === 'MOVIELISTUPDATE') {
+        return {
+            ...state,
+            movieslist: [...action.movieslist]
         }
     }
     return state;
