@@ -13,40 +13,55 @@ class Cards extends Component {
         let movieslist = [];
         if(this.props.active.current !== this.props.active.last) {
             switch (this.props.active.current) {
-                case "English": url = '/movies.json';
+                case "English": url = '/movies-eng.json';
                                 break;
                 case "Hindi": url = '/movies.json';
                                 break;
-                case "Bengali": url = '/movies.json';
+                case "Bengali": url = '/movies-beng.json';
                                 break;
-                case "Tamil": url = '/movies.json';
+                case "Tamil": url = '/movies-tamil.json';
                                 break;
-                case "Telugu": url = '/movies.json';
+                case "Telugu": url = '/movies-telugu.json';
                                 break;
                             
             }
-                axios.get(url)
-                    .then(res => {
-                        movieslist = Object.values(res.data);
-                        this.props.updateMovielist(movieslist);
-                        console.log('Bengali');
-                    })
-                    .catch(err => console.log('err', err));
+            axios.get(url)
+                .then(res => {
+                    movieslist = Object.values(res.data);
+                    this.props.updateMovielist(movieslist);
+                })
+                .catch(err => console.log('err', err));
+            
+            this.props.changehandler(this.props.active.current);
         }
         
     }
-    // componentDidMount() {
-    //     let movieslist = [];
-    //     if(this.props.active.current === 'Hindi') {
-    //         axios.get('/movies.json')
-    //             .then(res => {
-    //                 movieslist = Object.values(res.data);
-    //                 this.props.updateMovielist(movieslist);
-    //             })
-    //             .catch(err => console.log('err', err));
-    //     }
+    componentDidMount() {
+    //     let movieslist = [
+    //     { name: 'Spyder', language: 'Telugu', imdb: 6.5, url: "http://igmedia.blob.core.windows.net/igmedia/telugu/gallery/movies/spyder_2017/main.jpg" },
+    //     { name: 'Lie', language: 'Telugu', imdb: 5.5, url: "http://igmedia.blob.core.windows.net/igmedia/telugu/gallery/movies/lie_17/main.jpg" },
+    //     { name: 'Dhruva', language: 'Telugu', imdb: 7.2, url: "http://igmedia.blob.core.windows.net/igmedia/telugu/gallery/movies/dhruva_16/main.jpg" },
+    //     { name: 'Bruce Lee', language: 'Telugu', imdb: 6.1, url: "http://igmedia.blob.core.windows.net/igmedia/telugu/gallery/movies/ramcharannewmovie/main.jpg" },
+    //     { name: 'Neeram', language: 'Telugu', imdb: 6.7, url: "https://moviemavengaldotcom.files.wordpress.com/2016/07/neram-telugu-remake.jpg" },
+    //     { name: 'sarrainodu', language: 'Telugu', imdb: 6.5, url: "http://igmedia.blob.core.windows.net/igmedia/telugu/gallery/movies/sarainodu_16/sarimain.jpg" }
+    // ];
         
-    // }
+    //     axios.post('/movies-telugu.json', movieslist[0])
+    //             .then(res => console.log('res',res))
+    //             .catch(err => console.log('err', err));
+
+        let movieslist = [];
+        if(this.props.active.current === 'Hindi') {
+            axios.get('/movies.json')
+                .then(res => {
+                    movieslist = Object.values(res.data);
+                    this.props.updateMovielist(movieslist);
+                })
+                .catch(err => console.log('err', err));
+            this.props.changehandler(this.props.active.current);
+        }
+        
+    }
     render() {  
         if(this.props.active === 'Hindi') {
             console.log('hindi');

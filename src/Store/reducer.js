@@ -15,16 +15,13 @@ const initialState= {
 const reducer = (state = initialState, action) => {
     if( action.type === 'CHANGEACTIVE') {
         console.log('index', state);
-        if(action.language !== state.active.current) {
-            return {
-                ...state,
-                active: {
-                    last: state.active.current,
-                    current: action.language
-                }
+        return {
+            ...state,
+            active: {
+                last: state.active.current,
+                current: action.language
             }
-        }
-        
+        }   
     }
     if (action.type === 'MODALDATA') {
         return {
