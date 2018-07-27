@@ -1,0 +1,28 @@
+.album {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 100px;
+    align-items: center;
+    color: white;
+    font-weight: 100;
+    background-image: linear-gradient(110deg, #f93d66, #6d47d9);
+}
+
+.artwork {
+    width: 200px;
+}
+
+@media (max-width: 400px) {
+    .album {
+        padding: 8px;
+        grid-template-columns:  100px 200px;
+        grid-gap: 10px;
+        font-size: 10px;
+    }
+    .artwork {
+        width: 100px;
+    }
+}

@@ -10,7 +10,8 @@ const initialState= {
         imdb: null,
         url: null
     },
-    movieslist: []
+    movieslist: [],
+    collectionlist: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -41,6 +42,12 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             movieslist: [...action.movieslist]
+        }
+    }
+    if (action.type === 'COLLECTIONLISTUPDATE') {
+        return {
+            ...state,
+            collectionlist: [...action.collectionlist]
         }
     }
     return state;
