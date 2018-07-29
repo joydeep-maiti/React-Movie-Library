@@ -7,7 +7,13 @@ const collectioncards = (props) => {
     return (
         <div className={classes.alb}>
             {collectionlist.map(key => {
-                return <Collectioncard key={key.name} name={key.name} language={key.language} imdb={key.imdb} url={key.url} />
+                return <Collectioncard 
+                            key={key.id} 
+                            name={key.name} 
+                            language={key.language} 
+                            imdb={key.imdb} 
+                            url={key.url}
+                            clicked={() => props.clicked(key)} />
             })}
         </div>
     );
